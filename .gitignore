@@ -1,0 +1,22 @@
+# Ejecutables y salidas del código C
+*.x
+*.o
+*.bin
+notebooks/salidas/
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# macOS
+.DS_Store
