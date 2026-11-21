@@ -267,11 +267,12 @@ $$
 │   ├── poisson_cpu.c                 # código de referencia del curso (Dirichlet)
 │   └── poisson_comovil_cpu.c         # versión comóvil periódica
 ├── notebooks/
-│   ├── poisson_comovil_LFIS428.ipynb # compila, valida y genera todas las figuras
+│   ├── poisson_comovil_LFIS428.ipynb # código C por bloques, validación y figuras
 │   └── proyecto_gpu_cosmology.ipynb  # notas del proyecto (base de este README)
 ├── figuras/                          # PNG (README) y PDF (informe)
 └── informe/
     ├── informe.tex, referencias.bib  # informe con la plantilla de A&A
+    ├── apendice_codigo.tex           # recorrido del código C, bloque por bloque
     ├── informe.pdf
     └── figuras/
 ```
@@ -286,12 +287,7 @@ gcc -O2 poisson_comovil_cpu.c -lm -o poisson_comovil_cpu.x
 ./poisson_comovil_cpu.x 256 2 1e-10 0     # N, método (0 Jacobi, 1 GS-RB, 2 SOR-RB), tolerancia, modo (0 test, 1 delta.bin)
 ```
 
-**Cuaderno.** Abre `notebooks/poisson_comovil_LFIS428.ipynb` en VS Code (con `gcc`, `numpy` y `matplotlib`) o en Google Colab:
-
-```python
-!git clone https://github.com/Robboppen/Proyecto-GPU-Poisson-C-movil.git
-%cd Proyecto-GPU-Poisson-C-movil/notebooks
-```
+**Cuaderno.** `notebooks/poisson_comovil_LFIS428.ipynb` es autocontenido: el código C está escrito en sus celdas, bloque por bloque y con la explicación de cada uno, y el cuaderno lo guarda y lo compila. En Google Colab basta con *Archivo → Subir cuaderno* y *Ejecutar todas*. En VS Code ábrelo desde `notebooks/` (necesita `gcc`, `numpy` y `matplotlib`); ahí además comprueba que su código sea idéntico a `src/poisson_comovil_cpu.c`.
 
 **Informe.** Sube la carpeta `informe/` a Overleaf o compila con `pdflatex informe && bibtex informe && pdflatex informe && pdflatex informe`.
 

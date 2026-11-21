@@ -8,7 +8,13 @@
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{xcolor}
+\usepackage{listings}
 \usepackage[hidelinks]{hyperref}
+\lstset{language=C, basicstyle=\ttfamily\footnotesize, columns=fullflexible, keepspaces=true,
+  breaklines=true, frame=single, rulecolor=\color{black!25}, backgroundcolor=\color{black!3},
+  commentstyle=\color{black!55}\itshape, keywordstyle=\color{blue!55!black}\bfseries,
+  stringstyle=\color{red!50!black}, showstringspaces=false, morekeywords={real,size_t}, xleftmargin=4pt, xrightmargin=4pt,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1 {¿}{{?`}}1}
 
 \graphicspath{{figuras/}}
 
@@ -170,7 +176,7 @@ con lo que el número de iteraciones escala como $N$. Con bordes de Dirichlet, e
 
 \subsection{Estructura del código}
 
-El código \texttt{poisson\_comovil\_cpu.c} mantiene la estructura del código de referencia del curso: arreglos planos en orden \texttt{[y][x]} con índice \texttt{j*N+i}, el tipo \texttt{real} (\texttt{double}) y una función por operación sobre la malla (Tabla~\ref{tab:funciones}). El programa principal lee los parámetros, construye la fuente, repite bloques de 100 iteraciones seguidos del cálculo del residuo relativo $\|f-\nabla_h^2u\|/\|f\|$ hasta que cae bajo la tolerancia, y escribe el campo final en un archivo binario.
+El código \texttt{poisson\_comovil\_cpu.c} mantiene la estructura del código de referencia del curso: arreglos planos en orden \texttt{[y][x]} con índice \texttt{j*N+i}, el tipo \texttt{real} (\texttt{double}) y una función por operación sobre la malla (Tabla~\ref{tab:funciones}). El programa principal lee los parámetros, construye la fuente, repite bloques de 100 iteraciones seguidos del cálculo del residuo relativo $\|f-\nabla_h^2u\|/\|f\|$ hasta que cae bajo la tolerancia, y escribe el campo final en un archivo binario. El Apéndice~\ref{ap:codigo} recorre el código completo en nueve bloques, explicando cada uno y su traducción a CUDA.
 
 \begin{table}
   \caption{Funciones del código y su papel.}
@@ -264,7 +270,7 @@ La Fig.~\ref{fig:pm} muestra la formación de la red cósmica: en $a=0.1$ la dis
 \begin{figure*}[t]
   \centering
   \includegraphics[width=0.92\textwidth]{pm_evolucion.pdf}
-  \caption{Simulación PM bidimensional en $a=0.1$, $0.3$ y $1$. Arriba: densidad de partículas, $\log_{10}(\rho/\bar\rho)$. Abajo: potencial peculiar $\tilde\phi$.}
+  \caption{Simulación PM bidimensional en $a=0.1$, $0.3$ y $1$. Arriba: densidad de partículas, $\log_{10}(\rho/\bar\rho)$ (mapa de colores \emph{magma}, como en \citealt{BarreraHinojosa2020a}). Abajo: potencial peculiar $\tilde\phi$.}
   \label{fig:pm}
 \end{figure*}
 
@@ -296,5 +302,7 @@ Agradecemos al profesor C. Barrera-Hinojosa por el código de referencia y la or
 
 \bibliographystyle{aa}
 \bibliography{referencias}
+
+\input{apendice_codigo}
 
 \end{document}

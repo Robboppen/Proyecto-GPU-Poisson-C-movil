@@ -22,8 +22,8 @@
  *   5. Dos fuentes posibles:
  *        modo 0: test con un solo modo, delta = A cos(2 pi m x) cos(2 pi n y)
  *                (solución discreta y continua exactas conocidas)
- *        modo 1: delta leído de 'delta.bin' (p.ej. campo gaussiano
- *                generado con generar_delta.py)
+ *        modo 1: delta leído de 'delta.bin' (p.ej. el campo gaussiano
+ *                que genera el cuaderno poisson_comovil_LFIS428.ipynb)
  *
  * Compilar:  gcc -O2 poisson_comovil_cpu.c -lm -o poisson_comovil_cpu.x
  * Ejecutar:  ./poisson_comovil_cpu.x [N] [metodo] [tol] [modo] [Om] [a]
@@ -146,7 +146,9 @@ int main(int argc, char **argv) {
   real h = 1.0 / N;  // periódico: x_i = i h, i = 0..N-1
   real h2 = h * h;
   // rho_J = cos^2(pi h) (modo (1,0)) => w = 2/(1+sqrt(1-rho_J^2))
-  real w = (metodo == 2) ? 2.0 / (1.0 + sin(PI * h) * sqrt(1.0 + pow(cos(PI * h), 2))) : 1.0;
+  real w = (metodo == 2)
+               ? 2.0 / (1.0 + sin(PI * h) * sqrt(1.0 + pow(cos(PI * h), 2)))
+               : 1.0;
   int chequeo = 100;
   int max_iter = 10000000;
 
@@ -162,7 +164,8 @@ int main(int argc, char **argv) {
   if (modo == 0) {
     for (int j = 0; j < N; j++)
       for (int i = 0; i < N; i++)
-        delta[j * N + i] = A * cos(2 * PI * m * i * h) * cos(2 * PI * n * j * h);
+        delta[j * N + i] =
+            A * cos(2 * PI * m * i * h) * cos(2 * PI * n * j * h);
   } else {
     int e = leer_delta("delta.bin", delta, N);
     if (e) {
@@ -210,8 +213,9 @@ int main(int argc, char **argv) {
          1e3 * t_total / iter);
 
   if (modo == 0) {
-    // Autovalores del laplaciano discreto y continuo para cos(2pi m x)cos(2pi n y)
-    real lam_d = -4.0 / h2 * (pow(sin(PI * m * h), 2) + pow(sin(PI * n * h), 2));
+    // Autovalores del laplaciano discreto y continuo de cos(2pi m x)cos(2pi n y)
+    real lam_d =
+        -4.0 / h2 * (pow(sin(PI * m * h), 2) + pow(sin(PI * n * h), 2));
     real lam_c = -4.0 * PI * PI * (m * m + n * n);
     real err_d = 0.0, err_c = 0.0, umax = 0.0;
     for (int j = 0; j < N; j++)
@@ -226,7 +230,8 @@ int main(int argc, char **argv) {
       }
     printf("Error vs. solución discreta exacta (solver):        %.3e\n",
            err_d / umax);
-    printf("Error vs. solución continua (discretización, ~h^2): %.3e (h^2 = %.3e)\n",
+    printf("Error vs. solución continua (discretización, ~h^2): %.3e "
+           "(h^2 = %.3e)\n",
            err_c / umax, h2);
   }
 
