@@ -293,21 +293,21 @@ gcc -O2 poisson_comovil_cpu.c -lm -o poisson_comovil_cpu.x
 
 ## Referencias
 
-1. P. J. E. Peebles, *The Large-Scale Structure of the Universe*, Princeton University Press (1980).
-2. E. Bertschinger, Simulations of structure formation in the universe, *ARA&A* **36**, 599 (1998). [DOI](https://doi.org/10.1146/annurev.astro.36.1.599)
+1. P. J. E. Peebles, *The Large-Scale Structure of the Universe*
+2. E. Bertschinger, Simulations of structure formation in the universe
 3. S. Dodelson & F. Schmidt, *Modern Cosmology*, 2.ª ed., Academic Press (2020).
 4. R. W. Hockney & J. W. Eastwood, *Computer Simulation Using Particles*, IOP (1988).
-5. V. Springel, The cosmological simulation code GADGET-2, *MNRAS* **364**, 1105 (2005). [arXiv:astro-ph/0505010](https://arxiv.org/abs/astro-ph/0505010)
-6. R. Teyssier, Cosmological hydrodynamics with adaptive mesh refinement, *A&A* **385**, 337 (2002). [arXiv:astro-ph/0111367](https://arxiv.org/abs/astro-ph/0111367)
-7. C. Barrera-Hinojosa & B. Li, GRAMSES: a new route to general relativistic N-body simulations in cosmology. Part I, *JCAP* **01** (2020) 007. [arXiv:1905.08890](https://arxiv.org/abs/1905.08890)
-8. C. Barrera-Hinojosa & B. Li, GRAMSES. Part II. Initial conditions, *JCAP* **04** (2020) 056. [arXiv:2001.07968](https://arxiv.org/abs/2001.07968)
-9. W. Beordo, M. Bruni, C. Barrera-Hinojosa & M. Crosta, The frame-dragging vector potential on galaxy scales from dark-matter-only Newtonian N-body simulations (2025). [arXiv:2512.08703](https://arxiv.org/abs/2512.08703)
-10. M. Bartelmann & P. Schneider, Weak gravitational lensing, *Phys. Rep.* **340**, 291 (2001). [arXiv:astro-ph/9912508](https://arxiv.org/abs/astro-ph/9912508)
-11. N. Kaiser & G. Squires, Mapping the dark matter with weak gravitational lensing, *ApJ* **404**, 441 (1993). [DOI](https://doi.org/10.1086/172297)
-12. R. K. Sachs & A. M. Wolfe, Perturbations of a cosmological model and angular variations of the microwave background, *ApJ* **147**, 73 (1967). [DOI](https://doi.org/10.1086/148982)
-13. N. Kaiser, Clustering in real space and in redshift space, *MNRAS* **227**, 1 (1987). [DOI](https://doi.org/10.1093/mnras/227.1.1)
+5. V. Springel, The cosmological simulation code GADGET-2, *MNRAS*
+6. R. Teyssier, Cosmological hydrodynamics with adaptive mesh refinement
+7. C. Barrera-Hinojosa & B. Li, GRAMSES: a new route to general relativistic N-body simulations in cosmology. Part I
+8. C. Barrera-Hinojosa & B. Li, GRAMSES. Part II. Initial conditions
+9. W. Beordo, M. Bruni, C. Barrera-Hinojosa & M. Crosta, The frame-dragging vector potential on galaxy scales from dark-matter-only Newtonian N-body simulations 
+10. M. Bartelmann & P. Schneider, Weak gravitational lensing
+11. N. Kaiser & G. Squires, Mapping the dark matter with weak gravitational lensing
+12. R. K. Sachs & A. M. Wolfe, Perturbations of a cosmological model and angular variations of the microwave background 
+13. N. Kaiser, Clustering in real space and in redshift space, 
 14. W. L. Briggs, V. E. Henson & S. F. McCormick, *A Multigrid Tutorial*, 2.ª ed., SIAM (2000).
 15. W. H. Press et al., *Numerical Recipes*, 3.ª ed., Cambridge University Press (2007), §20.5.
-16. H. Aihara et al., Third data release of the Hyper Suprime-Cam Subaru Strategic Program, *PASJ* **74**, 247 (2022). [arXiv:2108.13045](https://arxiv.org/abs/2108.13045)
-17. X. Li et al., The three-year shear catalog of the Subaru Hyper Suprime-Cam SSP Survey, *PASJ* **74**, 421 (2022). [arXiv:2107.00136](https://arxiv.org/abs/2107.00136)
-18. Ya. B. Zel'dovich, Gravitational instability: an approximate theory for large density perturbations, *A&A* **5**, 84 (1970).
+16. H. Aihara et al., Third data release of the Hyper Suprime-Cam Subaru Strategic Program, 
+17. X. Li et al., The three-year shear catalog of the Subaru Hyper Suprime-Cam SSP Survey
+18. Ya. B. Zel'dovich, Gravitational instability: an approximate theory for large density perturbations
